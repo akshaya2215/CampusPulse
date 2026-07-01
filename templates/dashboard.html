@@ -1,0 +1,157 @@
+{% extends "base.html" %}
+
+{% block title %}
+Dashboard | CampusPulse
+{% endblock %}
+
+{% block content %}
+
+<link rel="stylesheet"
+      href="{{ url_for('static', filename='css/dashboard.css') }}">
+
+<div class="dashboard">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+
+        <div class="brand">
+
+            <div class="logo-box">
+                CP
+            </div>
+
+            <div>
+                <h2>CampusPulse</h2>
+                <span>Smart Campus. Smarter Decisions.</span>
+            </div>
+
+        </div>
+
+        <ul>
+
+            <li class="active">
+                <i class="fa-solid fa-house"></i>
+                Dashboard
+            </li>
+
+            <li>
+                <i class="fa-solid fa-school"></i>
+                Classrooms
+            </li>
+
+            <li>
+                <i class="fa-solid fa-flask"></i>
+                Laboratories
+            </li>
+
+            <li>
+                <i class="fa-solid fa-bolt"></i>
+                Energy
+            </li>
+
+            <li>
+                <i class="fa-solid fa-screwdriver-wrench"></i>
+                Maintenance
+            </li>
+
+            <li>
+                <i class="fa-solid fa-robot"></i>
+                AI Insights
+            </li>
+
+            <li>
+                <i class="fa-solid fa-chart-line"></i>
+                Analytics
+            </li>
+
+            <li>
+                <i class="fa-solid fa-gear"></i>
+                Settings
+            </li>
+
+        </ul>
+
+    </aside>
+
+    <!-- Main Content -->
+    <main class="content">
+
+        <!-- Top Navigation -->
+        <div class="topbar">
+
+            <div>
+
+                <h1>Dashboard</h1>
+
+                <p>Good Morning, Akshaya 👋</p>
+
+            </div>
+
+            <div class="top-right">
+
+                <div class="search-box">
+
+                    <i class="fa-solid fa-magnifying-glass"></i>
+
+                    <input
+                        type="text"
+                        placeholder="Search Campus..."
+                    >
+
+                </div>
+
+                <i class="fa-regular fa-bell notification"></i>
+
+                <div class="profile">
+
+                    <div class="profile-pic">
+                        A
+                    </div>
+
+                    <span>Akshaya</span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Statistics Cards -->
+
+        <div class="cards">
+
+            {% for card in stats %}
+
+            <div class="card">
+
+                <div class="card-top">
+
+                    <div class="card-icon {{ card.color }}">
+                        <i class="fa-solid {{ card.icon }}"></i>
+                    </div>
+
+                </div>
+
+                <h3>{{ card.title }}</h3>
+
+                <h2>{{ card.value }}</h2>
+
+                <p class="trend">
+                    {{ card.trend }}
+                </p>
+
+                <button class="details-btn">
+                    View Details →
+                </button>
+
+            </div>
+
+            {% endfor %}
+
+        </div>
+
+    </main>
+
+</div>
+
+{% endblock %}
