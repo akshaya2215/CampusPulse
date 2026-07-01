@@ -99,7 +99,7 @@ body{
 
 .content{
     flex:1;
-    padding:35px;
+    padding:50px;
 }
 
 /* ===========================
@@ -192,7 +192,7 @@ body{
     backdrop-filter:blur(12px);
     border:1px solid rgba(255,255,255,.08);
     border-radius:20px;
-    padding:28px;
+    padding:20px;
     transition:.35s;
 }
 
@@ -316,4 +316,45 @@ body{
         grid-template-columns:1fr;
     }
 
+}
+/* ===========================
+   Charts
+=========================== */
+
+.chart-section{
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:25px;
+
+    margin-top:40px;
+}
+
+.chart-card{
+
+    background:#1E293B;
+
+    border-radius:20px;
+
+    padding:25px;
+
+    border:1px solid rgba(255,255,255,.08);
+}
+
+.chart-card h2{
+
+    margin-bottom:20px;
+
+    color:white;
+
+    font-size:22px;
+}
+
+canvas{
+
+    width:100% !important;
+
+    height:300px !important;
 }

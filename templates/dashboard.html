@@ -6,25 +6,21 @@ Dashboard | CampusPulse
 
 {% block content %}
 
-<link rel="stylesheet"
-      href="{{ url_for('static', filename='css/dashboard.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard.css') }}">
 
 <div class="dashboard">
 
-    <!-- Sidebar -->
+    <!-- ================= SIDEBAR ================= -->
+
     <aside class="sidebar">
 
         <div class="brand">
-
-            <div class="logo-box">
-                CP
-            </div>
+            <div class="logo-box">CP</div>
 
             <div>
                 <h2>CampusPulse</h2>
                 <span>Smart Campus. Smarter Decisions.</span>
             </div>
-
         </div>
 
         <ul>
@@ -73,10 +69,12 @@ Dashboard | CampusPulse
 
     </aside>
 
-    <!-- Main Content -->
+    <!-- ================= MAIN CONTENT ================= -->
+
     <main class="content">
 
-        <!-- Top Navigation -->
+        <!-- Topbar -->
+
         <div class="topbar">
 
             <div>
@@ -116,7 +114,7 @@ Dashboard | CampusPulse
 
         </div>
 
-        <!-- Statistics Cards -->
+        <!-- ================= STATS ================= -->
 
         <div class="cards">
 
@@ -124,11 +122,9 @@ Dashboard | CampusPulse
 
             <div class="card">
 
-                <div class="card-top">
+                <div class="card-icon {{ card.color }}">
 
-                    <div class="card-icon {{ card.color }}">
-                        <i class="fa-solid {{ card.icon }}"></i>
-                    </div>
+                    <i class="fa-solid {{ card.icon }}"></i>
 
                 </div>
 
@@ -150,8 +146,38 @@ Dashboard | CampusPulse
 
         </div>
 
+        <!-- ================= CHARTS ================= -->
+
+        <div class="chart-section">
+
+            <div class="chart-card">
+
+                <h3>
+                    <i class="fa-solid fa-chart-column"></i>
+                    Classroom Occupancy
+                </h3>
+
+                <canvas id="occupancyChart"></canvas>
+
+            </div>
+
+            <div class="chart-card">
+
+                <h3>
+                    <i class="fa-solid fa-bolt"></i>
+                    Weekly Energy Usage
+                </h3>
+
+                <canvas id="energyChart"></canvas>
+
+            </div>
+
+        </div>
+
     </main>
 
 </div>
+
+<script src="{{ url_for('static', filename='js/charts.js') }}"></script>
 
 {% endblock %}
